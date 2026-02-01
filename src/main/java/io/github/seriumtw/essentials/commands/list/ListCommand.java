@@ -4,7 +4,7 @@ import com.hypixel.hytale.server.core.command.system.AbstractCommand;
 import com.hypixel.hytale.server.core.command.system.CommandContext;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.Universe;
-import io.github.seriumtw.essentials.Essentials;
+import io.github.seriumtw.essentials.SRMEssentials;
 import io.github.seriumtw.essentials.util.MessageManager;
 import io.github.seriumtw.essentials.util.Msg;
 

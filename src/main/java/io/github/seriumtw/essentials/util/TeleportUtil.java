@@ -18,7 +18,7 @@ import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.chunk.WorldChunk;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 
-import io.github.seriumtw.essentials.Essentials;
+import io.github.seriumtw.essentials.SRMEssentials;
 import io.github.seriumtw.essentials.managers.BackManager;
 import io.github.seriumtw.essentials.models.Spawn;
 

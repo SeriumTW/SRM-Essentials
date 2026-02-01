@@ -9,7 +9,7 @@ import com.hypixel.hytale.server.core.modules.entitystats.asset.DefaultEntitySta
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
-import io.github.seriumtw.essentials.Essentials;
+import io.github.seriumtw.essentials.SRMEssentials;
 import io.github.seriumtw.essentials.util.MessageManager;
 import io.github.seriumtw.essentials.util.Msg;
 

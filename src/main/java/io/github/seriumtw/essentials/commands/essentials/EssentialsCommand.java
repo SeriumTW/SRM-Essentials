@@ -4,7 +4,7 @@ import com.hypixel.hytale.protocol.MaybeBool;
 import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.command.system.AbstractCommand;
 import com.hypixel.hytale.server.core.command.system.CommandContext;
-import io.github.seriumtw.essentials.Essentials;
+import io.github.seriumtw.essentials.SRMEssentials;
 
 import javax.annotation.Nonnull;
 import java.util.concurrent.CompletableFuture;
@@ -37,7 +37,7 @@ public class EssentialsCommand extends AbstractCommand {
     @Override
     protected CompletableFuture<Void> execute(@Nonnull CommandContext context) {
         Message prefix = Message.raw("Running ").color(GRAY);
-        Message versionText = Message.raw("EssentialsCore v" + Essentials.VERSION)
+        Message versionText = Message.raw("EssentialsCore v" + SRMEssentials.VERSION)
                 .color(GREEN)
                 .link(CURSEFORGE_URL);
         versionText.getFormattedMessage().underlined = MaybeBool.True;

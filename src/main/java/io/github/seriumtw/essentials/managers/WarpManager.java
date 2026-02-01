@@ -1,6 +1,6 @@
 package io.github.seriumtw.essentials.managers;
 
-import io.github.seriumtw.essentials.Essentials;
+import io.github.seriumtw.essentials.SRMEssentials;
 import io.github.seriumtw.essentials.models.Warp;
 import io.github.seriumtw.essentials.util.MessageManager;
 import io.github.seriumtw.essentials.util.StorageManager;

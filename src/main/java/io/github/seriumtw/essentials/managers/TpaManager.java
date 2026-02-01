@@ -2,7 +2,7 @@ package io.github.seriumtw.essentials.managers;
 
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.Universe;
-import io.github.seriumtw.essentials.Essentials;
+import io.github.seriumtw.essentials.SRMEssentials;
 import io.github.seriumtw.essentials.util.ConfigManager;
 import io.github.seriumtw.essentials.util.Log;
 import io.github.seriumtw.essentials.util.MessageManager;

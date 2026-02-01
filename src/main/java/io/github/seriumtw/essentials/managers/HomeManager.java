@@ -1,7 +1,7 @@
 package io.github.seriumtw.essentials.managers;
 
 import com.hypixel.hytale.server.core.permissions.PermissionsModule;
-import io.github.seriumtw.essentials.Essentials;
+import io.github.seriumtw.essentials.SRMEssentials;
 import io.github.seriumtw.essentials.models.Home;
 import io.github.seriumtw.essentials.models.PlayerData;
 import io.github.seriumtw.essentials.util.ConfigManager;
