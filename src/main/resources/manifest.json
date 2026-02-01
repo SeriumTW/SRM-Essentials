@@ -1,0 +1,22 @@
+{
+    "Group": "SRM-Essentials",
+    "Name": "SRM-Essentials",
+    "Version": "1.0.0",
+    "Description": "Essential utilities for Hytale servers",
+    "Authors": [
+        {
+            "Name": "SeriumTW"
+        }
+    ],
+    "Website": "https://github.com/SeriumTW/SRM-Essentials",
+    "ServerVersion": "*",
+    "Dependencies": {
+        
+    },
+    "OptionalDependencies": {
+        
+    },
+    "DisabledByDefault": false,
+    "Main": "io.github.seriumtw.essentials.SRMEssentials",
+    "IncludesAssetPack": true
+}
