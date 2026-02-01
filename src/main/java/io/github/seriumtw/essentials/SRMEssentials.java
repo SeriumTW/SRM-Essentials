@@ -42,6 +42,7 @@ import io.github.seriumtw.essentials.events.TeleportMovementEvent;
 import io.github.seriumtw.essentials.events.SleepPercentageEvent;
 import io.github.seriumtw.essentials.events.StarterKitEvent;
 import io.github.seriumtw.essentials.events.UpdateNotifyEvent;
+import io.github.seriumtw.essentials.integration.SRMPermsIntegration;
 import io.github.seriumtw.essentials.managers.BackManager;
 import io.github.seriumtw.essentials.managers.ChatManager;
 import io.github.seriumtw.essentials.managers.HomeManager;
@@ -106,6 +107,9 @@ public class SRMEssentials extends JavaPlugin {
 
     @Override
     protected void start() {
+        // Initialize SRM-Perms integration (must be in start() when API is ready)
+        SRMPermsIntegration.init();
+        
         registerCommands();
         registerEvents();
         

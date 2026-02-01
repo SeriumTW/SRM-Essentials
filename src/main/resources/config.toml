@@ -18,23 +18,39 @@ admin = 50
 # Enable custom chat formatting
 enabled = true
 
-# For users using LuckPerms, PLEASE READ:
-# In your LuckPerms config, disable `chat-formatter`, and let Essentials handle chat formatting.
-# Join our Discord and see #faq for more information.
+# SRM-Perms Integration:
+# When SRM-Perms is installed, prefix/suffix are read from group metadata.
+# Configure prefix/suffix in SRM-Perms with:
+#   /sp group <group> meta set prefix "&c[Admin] "
+#   /sp group <group> meta set suffix " &c*"
+#
+# When SRM-Perms is NOT installed, fallback-formats below are used.
 
-# Fallback format for players without a configured rank
-# Placeholders: %player% = player name, %message% = chat message
+# Main chat format (used when SRM-Perms is available)
+# Placeholders:
+#   %prefix%  - Player's prefix from SRM-Perms
+#   %suffix%  - Player's suffix from SRM-Perms  
+#   %group%   - Player's primary group name
+#   %player%  - Player's username
+#   %message% - Chat message content
 # Color codes: &0-&9, &a-&f (hex colors like &#FF5555 also supported)
-fallback-format = "&0[&fPlayer&0] &f%player%: %message%"
+format = "%prefix%%player%%suffix%: %message%"
 
-# Chat formats per permission group/rank
+# Fallback format for players without a configured rank (when SRM-Perms is not available)
+fallback-format = "&7%player%&f: %message%"
+
+# Fallback formats per group (used when SRM-Perms is NOT installed)
 # The first matching group (in order listed) will be used
-# Group names are defined in your `permissions.json` file
-# Group names should match your permission groups exactly
-[chat.formats]
-OP = "&0[&cAdmin&0] &c%player%&f: %message%"
-Adventure = "&0[&fPlayer&0] &f%player%: %message%"
-Default = "&0[&fPlayer&0] &f%player%: %message%"
+# Group names should match your Hytale permissions.json groups exactly
+[chat.fallback-formats]
+owner = "&4[Owner] &4%player%&f: %message%"
+admin = "&c[Admin] &c%player%&f: %message%"
+mod = "&9[Mod] &9%player%&f: %message%"
+helper = "&a[Helper] &a%player%&f: %message%"
+streamer = "&5[Streamer] &5%player%&f: %message%"
+vip = "&6[VIP] &e%player%&f: %message%"
+player = "&7%player%&f: %message%"
+default = "&7%player%&f: %message%"
 
 [build]
 # Disable building everywhere (useful for PvP arenas, hub servers)

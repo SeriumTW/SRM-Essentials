@@ -14,7 +14,8 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class ConfigManager {
-    private static final String DEFAULT_CHAT_FORMAT = "&7%player%&f: %message%";
+    private static final String DEFAULT_CHAT_FORMAT = "%prefix%%player%%suffix%: %message%";
+    private static final String DEFAULT_CHAT_FALLBACK_FORMAT = "&7%player%&f: %message%";
     private static final int DEFAULT_SPAWN_PROTECTION_RADIUS = 16;
     private static final int DEFAULT_TELEPORT_DELAY = 3;
     private static final int DEFAULT_RTP_COOLDOWN = 300;
@@ -32,7 +33,8 @@ public class ConfigManager {
 
     // Chat settings
     private volatile boolean chatEnabled = true;
-    private volatile String chatFallbackFormat = DEFAULT_CHAT_FORMAT;
+    private volatile String chatFormat = DEFAULT_CHAT_FORMAT;
+    private volatile String chatFallbackFormat = DEFAULT_CHAT_FALLBACK_FORMAT;
     private volatile List<ChatFormat> chatFormats = List.of();
 
     // Build settings
@@ -133,10 +135,12 @@ public class ConfigManager {
 
             // Chat config
             chatEnabled = config.getBoolean("chat.enabled", () -> true);
-            chatFallbackFormat = config.getString("chat.fallback-format", () -> DEFAULT_CHAT_FORMAT);
+            chatFormat = config.getString("chat.format", () -> DEFAULT_CHAT_FORMAT);
+            chatFallbackFormat = config.getString("chat.fallback-format", () -> DEFAULT_CHAT_FALLBACK_FORMAT);
 
-            // Load chat formats (preserve order for priority)
-            TomlTable formatsTable = config.getTable("chat.formats");
+            // Load chat fallback formats (preserve order for priority)
+            // Used when SRM-Perms is not installed
+            TomlTable formatsTable = config.getTable("chat.fallback-formats");
             if (formatsTable != null) {
                 List<ChatFormat> formats = new ArrayList<>();
                 for (String group : formatsTable.keySet()) {
@@ -267,6 +271,18 @@ public class ConfigManager {
         return chatEnabled;
     }
 
+    /**
+     * Gets the main chat format (used when SRM-Perms is available).
+     * Supports placeholders: %prefix%, %suffix%, %group%, %player%, %message%
+     */
+    @Nonnull
+    public String getChatFormat() {
+        return chatFormat;
+    }
+
+    /**
+     * Gets the fallback chat format (used when SRM-Perms is not available).
+     */
     @Nonnull
     public String getChatFallbackFormat() {
         return chatFallbackFormat;
