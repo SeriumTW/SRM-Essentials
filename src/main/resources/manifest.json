@@ -14,7 +14,7 @@
         
     },
     "OptionalDependencies": {
-        "SRM-Perms": "*"
+        "SRM-Perms:SRM-Perms": "*"
     },
     "DisabledByDefault": false,
     "Main": "io.github.seriumtw.essentials.SRMEssentials",
